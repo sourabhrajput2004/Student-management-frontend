@@ -1,0 +1,166 @@
+/* ===========================
+   FULL BACKGROUND
+=========================== */
+.search-container {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  display: flex;
+  justify-content: center;
+  align-items:start;
+  position: relative;
+}
+
+.search-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.search-card {
+  margin-top: 20px;
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08); 
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  z-index: 1;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+.search-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-bar select{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+  min-width: 150px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+  min-width: 150px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc;
+}
+
+.search-bar input::placeholder {
+  color:#ccc 
+} 
+
+select {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+select option {
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  background: #1e293b;  /* dark background */
+  color: white;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #1e293b;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc;
+}
+
+.search-bar button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+/* ===========================
+   TABLE
+=========================== */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.result-table th,
+.result-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.result-table thead {
+  background: #1e293b;
+  color: white;
+}
+
+.result-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ===========================
+   STATES
+=========================== */
+.error {
+  color: #ef4444;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.no-result {
+  color: #ccc;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}

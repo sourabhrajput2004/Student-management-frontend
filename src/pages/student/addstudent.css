@@ -1,0 +1,168 @@
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f4f6f9;
+  color: #1f2937;
+}
+
+/* ========== Full Background Section ========== */
+.form-container {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;   /* IMPORTANT */
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);  
+  backdrop-filter: blur(3px);  
+
+  z-index: 0;
+}
+
+/* ========== Card ========== */
+.form-card {
+  position: relative;   
+  z-index: 1;         
+  width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08); /* Glass look */
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* Smooth Fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Title ========== */
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.form-title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(255,255,255,0.034);
+  width: 31.56%;
+  border-radius: 10px;
+  font-size: 22px;
+}
+.form-title:hover{
+   border:1px solid white;
+}
+
+/* ========== Form Group (Label + Input Same Row) ========== */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  background: transparent;
+}
+
+/* Label Styling */
+.form-group label {
+  flex: 0 0 150px;   /* fixed width label */
+  font-size: 14px;
+  font-weight: 600;
+  color: #feffff;
+}
+
+/* Input Styling */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+
+  color: white;
+  outline: none;
+}
+
+
+/* Focus */
+.form-group input:focus{
+  border-color: #232425;
+}
+
+/* ========== Button ========== */
+.btn {
+  width:30%;
+  padding: 12px;
+  margin-top: 15px;
+  margin-left: 158px;
+  border: none;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+  /* box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3); */
+  transform: translateY(20px);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .card {
+    padding: 25px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .form-group label {
+    flex: unset;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

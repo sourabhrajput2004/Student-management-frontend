@@ -1,0 +1,252 @@
+/* ===========================
+   FULL BACKGROUND WITH OVERLAY
+=========================== */
+.list-container {
+  min-height: 100vh;
+  background-image: url("../../assets/add-student.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  position: relative;
+}
+
+/* Dark Professional Overlay */
+.list-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  background: transparent;   /* 🔥 remove white */
+  box-shadow: none;
+  border: none;
+}
+
+/* ===========================
+   MAIN CONTENT WRAPPER
+=========================== */
+.dashboard-content {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+}
+
+/* ===========================
+   TABLE CONTAINER
+=========================== */
+
+.table-header {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header th,
+.table-header td {
+  padding: 12px;
+  text-align: left;
+}
+
+.table-header,
+.table-body {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-header th:nth-child(1),
+.table-body td:nth-child(1) { width: 8%; }
+
+.table-header th:nth-child(2),
+.table-body td:nth-child(2) { width: 20%; }
+
+.table-header th:nth-child(3),
+.table-body td:nth-child(3) { width: 32%; }
+
+.table-header th:nth-child(4),
+.table-body td:nth-child(4) { width: 20%; }
+
+.table-header th:nth-child(5),
+.table-body td:nth-child(5) { width: 20%; }
+
+.table-container {
+  background: transparent;   /* 🔥 no white box */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Scroll Wrapper */
+.table-body-wrapper {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);  /* glass effect */
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead th {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 14px;
+  text-align: left;
+  font-weight: 500;
+}
+
+tbody td {
+  padding: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #ffffff;   /* 🔥 visible on dark bg */
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+tbody tr {
+  background: transparent !important;
+}
+/* ===========================
+   INPUT INSIDE TABLE
+=========================== */
+table input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-btn { background: transparent; color: #fff; }
+.delete-btn { background: transparent; color: #fff; margin-left: 10px; }
+.save-btn { background: transparent; color: #fff; }
+.cancel-btn { background: transparent; color: #fff; margin-left: 10px;}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background: transparent;
+  color: white;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* Pagination Buttons */
+.pagination button {
+  background: transparent;
+  border: 1px solid rgba(59, 82, 230, 0.3);
+  color: white;
+}
+
+
+.pagination button:hover:not(:disabled) {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.pagination button:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Active Page */
+.pagination .active-page {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+
+  .list-container {
+    padding: 20px 10px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .pagination-controls {
+    flex-wrap: wrap;
+  }
+
+  table {
+    min-width: 700px;
+  }
+
+  .table-body-wrapper {
+    overflow-x: auto;
+  }
+}
