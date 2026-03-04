@@ -14,11 +14,10 @@ const StudentList = () => {
   const [editingId, setEditingId] = useState(null);
   const [editedStudent, setEditedStudent] = useState({});
 
-  // 🔥 Fetch Students (Server-side Pagination)
+  const API_URL = process.env.REACT_APP_API_URL; // .env me defined
+
   const fetchStudents = async (page) => {
-    const response = await axios.get(
-      `https://student-management-backend-mxll.onrender.com/api/students?page=${page}&size=${pageSize}`
-    );
+    const response = await axios.get(`${API_URL}?page=${page}&size=${pageSize}`);
     console.log(response.data);
     setStudents(response.data.content || []);
     setTotalPages(response.data.totalPages);
