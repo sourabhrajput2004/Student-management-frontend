@@ -14,7 +14,7 @@ const StudentList = () => {
   const [editingId, setEditingId] = useState(null);
   const [editedStudent, setEditedStudent] = useState({});
 
-  const API_URL = process.env.REACT_APP_API_URL; // .env me defined
+  const API_URL = import.meta.env.VITE_API_URL; // .env me defined
 
   const fetchStudents = async (page) => {
     const response = await axios.get(`${API_URL}?page=${page}&size=${pageSize}`);
