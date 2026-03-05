@@ -1,16 +1,76 @@
-# React + Vite
+# Student Management System - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend application** for the Student Management System built using **React.js**.  
+It provides a user-friendly interface to manage student records through API integration with the backend.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- Axios
+- CSS
+- React Hooks
+- Vite
 
-## React Compiler
+## 📌 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add new students
+- View student list
+- Update student details
+- Delete student records
+- Search students
+- Responsive UI
+- API integration with backend
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+src
+│
+├── components
+├── pages
+├── services
+├── assets
+└── App.jsx
+
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+
+
+git clone https://github.com/sourabhrajput2004/student-management-frontend.git
+
+
+### 2️⃣ Install Dependencies
+
+
+npm install
+
+
+### 3️⃣ Start Development Server
+
+
+npm run dev
+
+
+Application will run on:
+
+
+http://localhost:5173
+
+
+## 🔗 API Configuration
+
+Create **.env file**
+
+
+VITE_API_URL=http://localhost:8080
+
+
+## 🌐 Deployment
+
+Frontend deployed on **Vercel**
+
+## 👨‍💻 Author
+
+Sourabh Singh
